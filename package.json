@@ -1,0 +1,22 @@
+{
+  "name": "provision.sh",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/vinc/provision.sh",
+  "author": "Vincent Ollivier",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "9.10.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.0",
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "roboto-slab-fontface-kit": "^1.0.2",
+    "vue": "^2.5.16"
+  }
+}

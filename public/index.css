@@ -1,0 +1,31 @@
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(to right bottom, #050537, #601151, #ae2a4f, #e16736, #ebb412);
+  font-family: "Roboto Slab", serif;
+  font-size: 24px;
+}
+.container {
+  max-width: 30em;
+}
+.text-white {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+span[contenteditable] {
+  border-bottom: solid 3px rgba(255, 255, 255, 0.5);
+  font-weight: bold;
+  outline: none;
+  /*
+  min-width: 2em;
+  display: inline-block;
+  */
+}
+pre {
+  background-color: rgba(255, 255, 255, 0.1);
+  font-size: 80%;
+}
+ul {
+  font-size: 80%;
+}
+p a {
+  font-weight: bold;
+}

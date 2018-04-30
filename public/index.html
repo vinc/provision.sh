@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    -->
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/node_modules/roboto-slab-fontface-kit/roboto-slab.css">
+    <link rel="stylesheet" href="index.css">
+
+    <title>Provision.sh</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand text-white" href="#">Provision.sh</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white-50" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white-50" href="#">Docs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white-50" href="https://github.com/vinc/provision.sh">Code</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id="app" spellcheck="false" class="d-flex flex-row justify-content-center align-items-center my-5">
+      <div class="container text-white">
+        <h1 class="my-5">Bootstrap your infrastructure</h1>
+        <p>
+          Provision <span contenteditable @input="platform=$event.target.innerText">Dokku</span>
+          on <span contenteditable @input="cloud=$event.target.innerText">DigitalOcean</span>
+          at <span contenteditable @input="domain=$event.target.innerText">example.com</span>
+          with <span contenteditable @input="services=$event.target.innerText">Postgres and Redis</span>
+          by running the following commands:
+        </p>
+
+        <pre class="rounded my-4 p-3 text-white-50"><code>{{exports}}curl -sSL "{{url}}" | bash</code></pre>
+
+        <p>And deploy your app:</p>
+
+        <pre class="rounded my-4 p-3 text-white-50"><code>git push {{platform.toLowerCase()}} master</code></pre>
+      </div>
+    </div>
+
+    <div class="d-flex flex-row justify-content-center align-items-center my-5">
+      <div class="container text-white">
+        <h2 class="my-4">How does it work?</h2>
+        <p>
+          Provision.sh leverages powerful open source tools like
+          <a href="https://github.com/hashicorp/terraform" class="text-white">Terraform</a> and
+          <a href="https://github.com/dokku/dokku" class="text-white">Dokku</a> or
+          <a href="https://github.com/flynn/flynn" class="text-white">Flynn</a>
+          to build your own platform as a service on most cloud providers.
+        </p>
+        <p>
+          It helps you get started by generating and running for you the code of your infrastructure.
+          And it can also teach you how to do it yourself if you read the script.
+        </p>
+      </div>
+    </div>
+    <div class="container text-white">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link text-white-50" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white-50" href="#">Docs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white-50" href="https://github.com/vinc/provision.sh">Code</a>
+        </li>
+      </ul>
+    </div>
+
+    <script src="/node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="/node_modules/vue/dist/vue.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
