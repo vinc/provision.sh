@@ -1,14 +1,26 @@
 body {
   min-height: 100vh;
-  background-image: linear-gradient(to right bottom, #050537, #601151, #ae2a4f, #e16736, #ebb412);
   font-family: "Roboto Slab", serif;
-  font-size: 24px;
+  font-size: 20px;
 }
-.container {
+body nav {
+  background-image: linear-gradient(to right bottom, #050537, #601151, #ae2a4f);
+}
+
+body.index {
+  background-image: linear-gradient(to right bottom, #050537, #601151, #ae2a4f, #e16736, #ebb412);
+}
+body.index nav {
+  background-image: initial;
+}
+body.index .container {
   max-width: 30em;
 }
 .text-white {
   color: rgba(255, 255, 255, 0.9) !important;
+}
+.text-white-50 {
+  color: rgba(255, 255, 255, 0.7) !important;
 }
 span[contenteditable] {
   border-bottom: solid 3px rgba(255, 255, 255, 0.5);
@@ -21,11 +33,15 @@ span[contenteditable] {
 }
 pre {
   background-color: rgba(255, 255, 255, 0.1);
-  font-size: 80%;
+  font-size: 90%;
 }
 ul {
-  font-size: 80%;
+  font-size: 90%;
 }
 p a {
   font-weight: bold;
+  color: #fa8;
+}
+p a:hover {
+  color: #f85;
 }
