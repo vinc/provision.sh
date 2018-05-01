@@ -4,3 +4,5 @@
 
 /setup.sh
 /terraform*
+/.terraform/
+/*.tf

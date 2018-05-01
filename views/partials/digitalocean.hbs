@@ -1,0 +1,36 @@
+resource "digitalocean_droplet" "platform" {
+  ssh_keys           = [12345678] # Key example
+  image              = "ubuntu-16-04-x64"
+  region             = "nyc3"
+  size               = "s-1vcpu-1gb"
+  private_networking = true
+  backups            = true
+  ipv6               = true
+  name               = "{{domain}}"
+
+  provisioner "remote-exec" {
+    inline = [
+      "export PATH=$PATH:/usr/bin",
+      "sudo apt-get update",
+    ]
+
+    connection {
+      type        = "ssh"
+      private_key = "${file("~/.ssh/id_rsa")}"
+      user        = "root"
+      timeout     = "2m"
+    }
+  }
+}
+
+resource "digitalocean_domain" "platform" {
+  name       = "{{domain}}"
+  ip_address = "${digitalocean_droplet.platform.ipv4_address}"
+}
+
+resource "digitalocean_record" "platform" {
+  domain = "${digitalocean_domain.platform.name}"
+  type   = "A"
+  name   = "{{domain}}"
+  value  = "${digitalocean_droplet.platform.ipv4_address}"
+}

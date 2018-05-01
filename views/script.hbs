@@ -2,15 +2,17 @@ printf "Provisioning {{platform}}"
 printf " on {{cloud}}"
 printf " at {{domain}}"
 {{#each services as |service|}}
-  {{#if @first}}
-    printf " with {{service}}"
-  {{else}}
-    printf " and {{service}}"
-  {{/if}}
+{{#if @first}}
+printf " with {{service}}"
+{{else}}
+printf " and {{service}}"
+{{/if}}
 {{/each}}
 echo " ..."
 
-curl -sSLO "{{site}}/setup.sh"
+curl -o config.tf -sSL "{{url.base}}/config.tf{{{url.search}}}"
+curl -sSLO "{{url.base}}/setup.sh"
 chmod u+x setup.sh
 ./setup.sh
 ./terraform version
+./terraform init

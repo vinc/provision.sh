@@ -1,33 +1,33 @@
 var querystringify = function(value) {
   if (!value) {
-    return '';
+    return "";
   }
   return value.
     toLowerCase().
-    replace(/ and /g, ',').
-    replace(/,+\s*/g, ',');
+    replace(/ and /g, ",").
+    replace(/,+\s*/g, ",");
 };
 var app = new Vue({
-  el: '#app',
+  el: "#app",
   data: {
-    platform: 'Dokku',
-    cloud: 'DigitalOcean',
-    domain: 'example.com',
-    services: 'Postgres and Redis'
+    platform: "Dokku",
+    cloud: "DigitalOcean",
+    domain: "example.com",
+    services: "Postgres and Redis"
   },
   computed: {
     exports: function() {
       switch (querystringify(this.cloud)) {
-        case 'digitalocean': return 'export DIGITALOCEAN_TOKEN=xxxx\n';
-        case 'aws': return 'export AWS_ACCESS_KEY_ID=xxxx\nexport AWS_SECRET_ACCESS_KEY=xxxx\n';
+        case "digitalocean": return "export DIGITALOCEAN_TOKEN=xxxx\n";
+        case "aws": return "export AWS_ACCESS_KEY_ID=xxxx\nexport AWS_SECRET_ACCESS_KEY=xxxx\n";
       }
     },
     url: function() {
-      return 'https://provision.sh' +
-        '?platform=' + querystringify(this.platform) +
-        '&cloud=' + querystringify(this.cloud) +
-        '&domain=' + querystringify(this.domain) +
-        '&services=' + querystringify(this.services);
+      return window.location.href +
+        "?platform=" + querystringify(this.platform) +
+        "&cloud=" + querystringify(this.cloud) +
+        "&domain=" + querystringify(this.domain) +
+        "&services=" + querystringify(this.services);
     }
   }
 });
