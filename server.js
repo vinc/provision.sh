@@ -16,6 +16,7 @@ app.get("/", function(req, res, next) {
       cloud: req.query.cloud,
       domain: req.query.domain,
       services: (req.query.services || "").split(","),
+      site: "http://localhost:3000",
       layout: false
     });
   } else {

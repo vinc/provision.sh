@@ -10,4 +10,7 @@ printf " at {{domain}}"
 {{/each}}
 echo " ..."
 
-echo "TODO"
+curl -sSLO "{{site}}/setup.sh"
+chmod u+x setup.sh
+./setup.sh
+./terraform version
