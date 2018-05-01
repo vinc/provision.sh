@@ -1,0 +1,13 @@
+printf "Provisioning {{platform}}"
+printf " on {{cloud}}"
+printf " at {{domain}}"
+{{#each services as |service|}}
+  {{#if @first}}
+    printf " with {{service}}"
+  {{else}}
+    printf " and {{service}}"
+  {{/if}}
+{{/each}}
+echo " ..."
+
+echo "TODO"

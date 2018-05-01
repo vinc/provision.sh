@@ -25,7 +25,7 @@ var app = new Vue({
     url: function() {
       return 'https://provision.sh' +
         '?platform=' + querystringify(this.platform) +
-        '?cloud=' + querystringify(this.cloud) +
+        '&cloud=' + querystringify(this.cloud) +
         '&domain=' + querystringify(this.domain) +
         '&services=' + querystringify(this.services);
     }
