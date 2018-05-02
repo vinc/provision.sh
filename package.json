@@ -18,6 +18,7 @@
     "express": "^4.16.3",
     "hbs": "^4.0.1",
     "jquery": "^3.3.1",
+    "popper.js": "^1.14.3",
     "roboto-slab-fontface-kit": "^1.0.2",
     "vue": "^2.5.16"
   }

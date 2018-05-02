@@ -7,6 +7,7 @@ var querystringify = function(value) {
     replace(/ and /g, ",").
     replace(/,+\s*/g, ",");
 };
+
 var app = new Vue({
   el: "#app",
   data: {
