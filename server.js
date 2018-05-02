@@ -42,4 +42,4 @@ app.use("/node_modules", express.static(path.join(__dirname, "node_modules")));
   });
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
