@@ -11,9 +11,7 @@ printf " and {{service}}"
 echo " ..."
 
 curl -o config.tf -sSL "{{url.base}}/config.tf{{{url.search}}}"
-curl -sSLO "{{url.base}}/setup.sh"
-chmod u+x setup.sh
-./setup.sh
+curl -sSL "{{url.base}}/setup.sh" | bash
 ./terraform version
 ./terraform init
 ./terraform plan

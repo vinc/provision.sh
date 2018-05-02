@@ -2,7 +2,6 @@
 
 /yarn-error.log
 
-/setup.sh
 /terraform*
 /.terraform/
 /*.tf
