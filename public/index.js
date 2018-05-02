@@ -23,7 +23,7 @@ var app = new Vue({
       }
     },
     url: function() {
-      return window.location.href +
+      return window.location.origin +
         "?platform=" + querystringify(this.platform) +
         "&cloud=" + querystringify(this.cloud) +
         "&domain=" + querystringify(this.domain) +
