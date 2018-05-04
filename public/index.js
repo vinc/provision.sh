@@ -30,6 +30,14 @@ var app = new Vue({
         "&domain=" + querystringify(this.domain) +
         "&services=" + querystringify(this.services);
     }
+  },
+  methods: {
+    update: function(event) {
+      $(event.target).popover("update");
+      var value = event.target.innerText;
+      var model = event.target.dataset.bind;
+      this[model] = value;
+    }
   }
 });
 

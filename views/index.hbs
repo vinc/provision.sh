@@ -2,10 +2,14 @@
   <div class="container text-white">
     <h1 class="my-5">Bootstrap your infrastructure</h1>
     <p>
-      Provision <span contenteditable @input="platform=$event.target.innerText" tabindex="0" data-toggle="popover" data-trigger="focus" data-placement="top" title="Platform" data-content="Enter one of the following platforms: Dokku, Flynn">Dokku</span>
-      on <span contenteditable @input="cloud=$event.target.innerText" data-toggle="popover" data-trigger="focus" data-placement="top" title="Cloud Provider" data-content="Enter one of the following cloud providers: AWS, DigitalOcean, Scaleway">DigitalOcean</span>
-      at <span contenteditable @input="domain=$event.target.innerText" data-toggle="popover" data-trigger="focus" data-placement="top" title="Domain" data-content="Enter your domain">example.com</span>
-      with <span contenteditable @input="services=$event.target.innerText" data-toggle="popover" data-trigger="focus" data-placement="top" title="Services" data-content="Enter one or more of the following services: Redis, Postgres, Mongo">Postgres and Redis</span>
+      Provision
+      <span contenteditable data-bind="platform" @input="update" tabindex="0" data-toggle="popover" data-trigger="focus" data-placement="top" title="Platform" data-content="Enter one of the following platforms: Dokku, Flynn" placeholder="platform">Dokku</span>
+      on
+      <span contenteditable data-bind="cloud" @input="update" tabindex="0" data-toggle="popover" data-trigger="focus" data-placement="top" title="Cloud Provider" data-content="Enter one of the following cloud providers: AWS, DigitalOcean, Scaleway" placeholder="cloud">DigitalOcean</span>
+      at
+      <span contenteditable data-bind="domain" @input="update" tabindex="0" data-toggle="popover" data-trigger="focus" data-placement="top" title="Domain" data-content="Enter your domain" placeholder="domain">example.com</span>
+      with
+      <span contenteditable data-bind="services" @input="update" tabindex="0" data-toggle="popover" data-trigger="focus" data-placement="top" title="Services" data-content="Enter one or more of the following services: Redis, Postgres, Mongo" placeholder="services">Postgres and Redis</span>
       by running the following commands:
     </p>
 
