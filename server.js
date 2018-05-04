@@ -20,6 +20,7 @@ app.use("/node_modules", express.static(path.join(__dirname, "node_modules")));
         platform: req.query.platform,
         cloud: req.query.cloud,
         domain: req.query.domain,
+        app: req.query.domain.replace(/[.]/g, "-"),
         services: (req.query.services || "").split(","),
         url: {
           base: process.env.SITE_URL || "http://localhost:3000",

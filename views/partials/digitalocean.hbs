@@ -16,10 +16,7 @@ resource "digitalocean_droplet" "platform" {
   name               = "{{domain}}"
 
   provisioner "remote-exec" {
-    inline = [
-      "export PATH=$PATH:/usr/bin",
-      "sudo apt-get update",
-    ]
+    {{> (lookup . "platform")}}
 
     connection {
       type        = "ssh"

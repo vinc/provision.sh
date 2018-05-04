@@ -1,0 +1,16 @@
+    inline = [
+      "export PATH=$PATH:/usr/bin",
+      "wget https://raw.githubusercontent.com/dokku/dokku/v0.12.5/bootstrap.sh",
+      "sudo DOKKU_TAG=v0.12.5 bash bootstrap.sh"
+      "service dokku-installer stop",
+      "systemctl disable dokku-installer",
+      "cat .ssh/authorized_keys | sshcommand acl-add dokku admin",
+      "echo {{domain}} > /home/dokku/VHOST",
+      "echo {{domain}} > /home/dokku/HOSTNAME",
+      "dokku apps:create {{app}}",
+      {{#each services as |service|}}
+      "dokku plugin:install https://github.com/dokku/dokku-{{service}}.git {{service}}",
+      "dokku {{service}}:create {{service}}-{{../app}}",
+      "dokku {{service}}:link {{service}}-{{../app}} {{../app}}",
+      {{/each}}
+    ]
