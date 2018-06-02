@@ -1,7 +1,7 @@
     inline = [
       "export PATH=$PATH:/usr/bin",
       "wget https://raw.githubusercontent.com/dokku/dokku/v0.12.5/bootstrap.sh",
-      "sudo DOKKU_TAG=v0.12.5 bash bootstrap.sh"
+      "sudo DOKKU_TAG=v0.12.5 bash bootstrap.sh",
       "service dokku-installer stop",
       "systemctl disable dokku-installer",
       "cat .ssh/authorized_keys | sshcommand acl-add dokku admin",
