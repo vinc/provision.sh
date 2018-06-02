@@ -21,6 +21,7 @@ var app = new Vue({
       switch (querystringify(this.cloud)) {
         case "digitalocean": return "export DIGITALOCEAN_TOKEN=xxxx\n";
         case "aws": return "export AWS_ACCESS_KEY_ID=xxxx\nexport AWS_SECRET_ACCESS_KEY=xxxx\n";
+        case "scaleway": return "export SCALEWAY_ORGANIZATION=xxxx\nexport SCALEWAY_TOKEN=xxxx\n";
       }
     },
     url: function() {
